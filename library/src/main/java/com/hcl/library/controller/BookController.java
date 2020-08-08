@@ -7,7 +7,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +22,7 @@ import com.hcl.library.service.BookService;
  */
 
 @RestController
+@RequestMapping(value = "/library")
 public class BookController {
   
     @Autowired
@@ -47,6 +47,11 @@ public class BookController {
 		return book;       
         }
     
-   
+    @RequestMapping(value = "/books", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public List<Book> getAllBook() {
+        return bookService.getAllBooks();
+    }
+    
 }
 

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.hcl.library.exception.BadResourceRequestException;
 import com.hcl.library.exception.BookNotFoundException;
+import com.hcl.library.exception.NoDataFoundException;
 import com.hcl.library.model.Book;
 import com.hcl.library.repository.BookRepository;
 import com.hcl.library.service.BookService;
@@ -39,6 +40,15 @@ public class BookServiceImpl implements BookService {
 		List<Book> books = bookRepository.getBookStockByTitleOrAuthorOrCategory(title, author,category);
 		if (books.isEmpty()) {
             throw new BookNotFoundException(title);
+        }
+		return books;
+	}
+
+	@Override
+	public List<Book> getAllBooks() {
+		List<Book> books = bookRepository.findAll();
+		if (books.isEmpty()) {
+            throw new NoDataFoundException();
         }
 		return books;
 	}

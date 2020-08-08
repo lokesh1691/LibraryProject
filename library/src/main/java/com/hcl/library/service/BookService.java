@@ -10,4 +10,6 @@ public interface BookService {
 	
 	List<Book> searchBook(String title, String author, String category);
 
+	List<Book> getAllBooks();
+
 }
