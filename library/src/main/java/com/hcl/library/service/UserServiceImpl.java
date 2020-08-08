@@ -1,6 +1,6 @@
 package com.hcl.library.service;
 
-import com.hcl.library.repo.UserRepository;
+import com.hcl.library.repository.UserRepository;
 import com.hcl.library.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
