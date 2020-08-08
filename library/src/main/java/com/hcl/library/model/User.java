@@ -34,6 +34,4 @@ public class User implements Serializable {
 		this.uname = uname;
 	}
 	
-
-
 }

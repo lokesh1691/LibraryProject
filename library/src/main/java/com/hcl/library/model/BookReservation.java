@@ -17,11 +17,19 @@ public class BookReservation implements Serializable{
 	@Id
 	private Long rid;
 	
-	private Date issueDate;
+	private String issueDate;
 	
-	private Date returnDate;
+	private String returnDate;
 	
-	private Book book;
+	private long bookId;
+
+	public long getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(long bookId) {
+		this.bookId = bookId;
+	}
 
 	public Long getRid() {
 		return rid;
@@ -31,27 +39,20 @@ public class BookReservation implements Serializable{
 		this.rid = rid;
 	}
 
-	public Date getIssueDate() {
+	public String getIssueDate() {
 		return issueDate;
 	}
 
-	public void setIssueDate(Date issueDate) {
+	public void setIssueDate(String issueDate) {
 		this.issueDate = issueDate;
 	}
 
-	public Date getReturnDate() {
+	public String getReturnDate() {
 		return returnDate;
 	}
 
-	public void setReturnDate(Date returnDate) {
+	public void setReturnDate(String returnDate) {
 		this.returnDate = returnDate;
 	}
-
-	public Book getBook() {
-		return book;
-	}
-
-	public void setBook(Book book) {
-		this.book = book;
-	}
+	
 }

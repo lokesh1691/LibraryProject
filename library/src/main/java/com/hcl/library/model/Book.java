@@ -18,11 +18,11 @@ public class Book implements Serializable {
 	
 	private String title;
 	
-	private String author[];
+	private String author;
 	
 	private int rackNumber; 
 	
-	private String category[];
+	private String category;
 	
 	private int quantity;	
 
@@ -43,11 +43,11 @@ public class Book implements Serializable {
 		this.title = title;
 	}
 
-	public String[] getAuthor() {
+	public String getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(String[] author) {
+	public void setAuthor(String author) {
 		this.author = author;
 	}
 
@@ -59,11 +59,11 @@ public class Book implements Serializable {
 		this.rackNumber = rackNumber;
 	}
 
-	public String[] getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
-	public void setCategory(String[] category) {
+	public void setCategory(String category) {
 		this.category = category;
 	}
 
@@ -77,8 +77,8 @@ public class Book implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Book [bid=" + bid + ", title=" + title + ", author=" + Arrays.toString(author) + ", rackNumber="
-				+ rackNumber + ", category=" + Arrays.toString(category) + ", quantity=" + quantity + "]";
+		return "Book [bid=" + bid + ", title=" + title + ", author=" + author + ", rackNumber="
+				+ rackNumber + ", category=" + category + ", quantity=" + quantity + "]";
 	}
 	
 	
