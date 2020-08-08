@@ -18,6 +18,16 @@ public class User implements Serializable {
 	
 	private String uname;
 
+	private String password;
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public Long getUid() {
 		return uid;
 	}
