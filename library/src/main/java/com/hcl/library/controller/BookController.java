@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,18 +36,20 @@ public class BookController {
      *
      * @return
      */
+    @ApiOperation(value = "adding book")
     @RequestMapping(value = "/book", method = RequestMethod.POST, consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public void createNewBook(@RequestBody @Valid Book book) {
     	bookService.createNewBook(book);
     }
 
+    @ApiOperation(value = "Filtering books")
     @RequestMapping(value = "/book", method = RequestMethod.GET)
     public List<Book> searchBook(@RequestParam(required = false) String title, @RequestParam(required = false) String author,@RequestParam(required = false) String category) {
     	List<Book> book = bookService.searchBook(title,author,category);
 		return book;       
         }
-    
+    @ApiOperation(value = "Get all books")
     @RequestMapping(value = "/books", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<Book> getAllBook() {
