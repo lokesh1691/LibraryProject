@@ -14,9 +14,9 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value="/login", method = RequestMethod.POST)
-    public String showWelcomePage(@RequestParam String name, @RequestParam String password){
+    public String showWelcomePage(@RequestParam Long uid, @RequestParam String password){
 
-        boolean isValidUser = userService.validateUser(name, password);
+        boolean isValidUser = userService.validateUser(uid, password);
 
         if (!isValidUser) {
             return "Invalid Credentials";
