@@ -9,4 +9,5 @@ import com.hcl.library.model.User;
 @Repository("userRepository")
 public interface UserRepository extends  JpaRepository<User, Long>{
     User findByUidAndPassword(Long uid, String password);
+    List<Book> getBookIssueToUser(String userId);
 }

@@ -36,4 +36,11 @@ public class UserController {
         }
         return "registered";
     }
+
+    @ApiOperation(value = "get Issue Book For USer")
+    @GetMapping("/user")
+    public List<Book> bookIssueToUser(@RequestParam(required = false) String userId) {
+        List<Book> book = userService.searchBook(userId);
+        return book;
+    }
 }

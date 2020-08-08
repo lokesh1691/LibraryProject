@@ -17,6 +17,11 @@ public class UserServiceImpl implements UserService{
     }
     @Override
     public void registerUser(User u) throws Exception{
-        userRepository.save(u);
+      userRepository.save(u);
+    }
+
+    @verride
+    public List<Book> getBookIssue(String userId) {
+      return userRepository.getBookIssueToUser(userId);
     }
 }
